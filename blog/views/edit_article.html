@@ -1,0 +1,11 @@
+<div class="content clearfix admin">
+    <form method="post">
+        标题：<br>
+        <input type="text" name="title" value="{{ post.title }}" disabled="disabled" class="disabled" /><br>
+        摘要：<br>
+        <textarea name="abstract" rows="10" cols="100" maxlength="150">{{ post.abstract }}</textarea><br>
+        正文：<br>
+        <textarea name="post" rows="20" cols="100">{{ post.post }}</textarea><br>
+        <input type="submit" value="保存修改" />
+    </form>
+</div>

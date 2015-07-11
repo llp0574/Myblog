@@ -1,0 +1,33 @@
+<div class="content blog clearfix blog-index">
+    <div class="row">
+        <div class="col-8">
+            <article>
+                <h1><a href="#">{{ post.title }}</a></h1>
+                <p class="author">
+                    {{ post.name }} <span class="date">on {{ post.time.minute }}</span>
+                </p>
+                {{#if user}}
+                <p>
+                    <a class="button green right" href="/edit/{{ post.name }}/{{ post.time.day }}/{{ post.title }}">编辑</a>
+                    <a class="button red right" href="/remove/{{ post.name }}/{{ post.time.day }}/{{ post.title }}">删除</a>
+                </p>
+                {{/if}}
+                <img src="http://www.adhamdannaway.com/wp-content/uploads/2015/01/designer-coder-collage.jpg" class="attachment-post-thumbnail wp-post-image" alt="designer-coder-collage">
+                <p>{{{ post.post }}}</p>
+            </article>
+            <script type="text/javascript">
+            (function(){
+            var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&dpc=1";
+            url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
+            document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
+            })();
+            </script>
+            <script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+            <script type="text/javascript">
+            window.WBComment.init({
+                "id": "WBCommentFrame"
+            });
+            </script>
+        </div>
+    </div>
+</div>
