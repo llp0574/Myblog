@@ -1384,7 +1384,6 @@ button:active,
     }
 }
 /* jQuery Preloader */
-/* jQuery Preloader */
 #jpreOverlay,
 #qLoverlay {
     background-color: #FFF;
@@ -1411,7 +1410,7 @@ button:active,
     top: 43%;
     left: 50%;
     margin-left: -50px;
-    display: none;
+    display: block;
 }
 #jpreBar,
 #qLbar {
