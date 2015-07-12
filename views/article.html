@@ -12,12 +12,12 @@
                     <a class="button red right" href="/remove/{{ post.name }}/{{ post.time.day }}/{{ post.title }}">删除</a>
                 </p>
                 {{/if}}
-                <img src="http://www.adhamdannaway.com/wp-content/uploads/2015/01/designer-coder-collage.jpg" class="attachment-post-thumbnail wp-post-image" alt="designer-coder-collage">
-                <p>{{{ post.post }}}</p>
+                <img src="/img/articles/article.jpg" class="attachment-post-thumbnail wp-post-image" alt="designer-coder-collage">
+                {{{ post.post }}}
             </article>
             <script type="text/javascript">
             (function(){
-            var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&dpc=1";
+            var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&border=1&fontsize=14&ralateuid=1806141607&dpc=1";
             url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
             document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
             })();
