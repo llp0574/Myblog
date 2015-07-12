@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// 图片压缩模块
+var smushit = require('node-smushit');
+
 // 数据库配置
 var settings = require('./settings');
 // 成功与错误信息的显示模块
@@ -102,5 +105,8 @@ app.use(function(err, req, res, next) {
   });
   console.log(err);
 });
+
+//优化一个目录下的所有图片（包括子目录中的图片）
+smushit.smushit(__dirname + '/public/img', {recursive: true});
 
 module.exports = app;
