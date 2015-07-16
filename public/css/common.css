@@ -307,6 +307,9 @@ header nav .portfolio .page-item-7 a {
 .logo:hover {
     opacity: 0.5;
 }
+.icon-nav {
+    display: none;
+}
 .social {
     display: block;
     float: right;
@@ -1162,12 +1165,7 @@ button:active,
     font-weight: normal;
     font-style: normal;
 }
-/*!
- * baguetteBox.js
- * @author  feimosi
- * @version 1.1.1
- * @url https://github.com/feimosi/baguetteBox.js
- */
+/*baguetteBox*/
 #baguetteBox-overlay {
     display: none;
     opacity: 0;
@@ -1442,4 +1440,166 @@ button:active,
 /*cnzz*/
 #cnzz_stat_icon_1255756507 img {
     margin-bottom: 0
+}
+/*媒体查询*/
+@media ( min-width: 320px ) and ( max-width: 1024px ) { /* 移动设备 */
+    header {
+        background: #111111 url(../img/sprite-mobile.png) repeat-x;
+        height: 62px;
+        padding: 0 5%;
+        width: 90%;
+        position: absolute;
+        z-index: 1000;
+    }
+    .logo {
+        height: 62px;
+        width: 40px;
+        background: url(../img/sprite-mobile.png) 0px -63px no-repeat;
+        display: block;
+        text-indent: -9999px;
+        float: left;
+    }
+    .icon-nav {
+        width: 27px;
+        height: 62px;
+        float: right;
+        background: url(../img/sprite-mobile.png) -42px -63px no-repeat;
+        display: block;
+        text-indent: -9999px;
+    }
+    .icon-nav.active {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    .social {
+        display: none;
+    }
+    header nav {
+        display: none;
+        background: #222;
+        position: fixed;
+        top: 62px;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        font-size: 24px;
+        font-size: 2.4rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    header nav li {
+        height: 3em;
+        list-style: none;
+        display: block;
+        border-top: #212121 solid 1px;
+        border-bottom: #363636 solid 1px;
+        float: none;
+    }
+    header nav li a {
+        display: block;
+        color: #fff;
+        line-height: 6rem;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+    .content {
+        margin-top: 62px;
+    }
+    .home section.light, section.main {
+        overflow: hidden;
+        border-top: #FFF solid 1px;
+        padding: 0;
+    }
+    .face {
+        width: 100%;
+        position: relative;
+        height: auto;
+        max-width: 520px;
+        min-width: 320px;
+        margin: 0 auto;
+    }
+    .face .face-img {
+        display: block;
+        margin-bottom: 0;
+    }
+    .face .coder, .face .virgo {
+        position: absolute;
+        width: 40%;
+        display: block;
+        z-index: 10;
+        height: 15%;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+    }
+    .face .virgo {
+        left: 0;
+    }
+    .face .coder {
+        right: 0;
+        text-align: right;
+    }
+    .face .virgo .description, .face .coder .description {
+        position: static;
+        width: auto;
+    }
+    .face .virgo .description {
+        padding-left: 5px;
+    }
+    .face .coder .description {
+        padding-right: 5px;
+    }
+    .face .coder h1, .face .virgo h1 {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+    .face .virgo-img, .face .coder-img, .face .virgo-bg, .face .coder-bg, .face .coder p, .face .virgo p {
+        display: none;
+    }
+    section.dark, section.light {
+        padding: 3em 1.5em;
+    }
+    .thumbs .description {
+        padding: 0.5rem;
+    }
+    .thumbs h4 {
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+    .thumbs p {
+        display: none;
+    }
+    footer nav {
+        display: none;
+    }
+    footer .left {
+        float: none !important;
+    }
+    .text-main {
+        float: none;
+        width: auto;
+        padding: 3em 1.5em;
+    }
+}
+@media ( min-width: 320px ) and ( max-width: 667px ) {
+    .thumbs li {
+        width: 44.16666666666%;
+        padding: 1.6666666666% 1.6666666666% 0 1.6666666666%;
+        margin-right: 5%;
+    }
+    .thumbs li:nth-child(2n){
+        margin-right: 0;
+    }
+    .thumbs li:nth-child(3n){
+        display: none;
+    }
+}
+@media ( min-width: 1025px ){   /* pc设备(默认) */
+
+}
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+
 }

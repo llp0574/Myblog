@@ -44,6 +44,7 @@
         <div class="row">
             <div class="col-12">
                 <a id="logo" class="logo" href="/">Li Linpu</a>
+                <div class="icon-nav">navigation</div>
                 <ul class="social">
                     <li class="github"><a href="https://github.com/llp0574" title="Follow me on Github" target="_blank">github</a></li>
                     <li class="qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=563179705&site=qq&menu=yes" title="Connect with me on qq" target="_blank">qq</a></li>
@@ -158,10 +159,10 @@
         $('.transition, #nav a, #nav-footer a, #thumbs a, #next a, #prev a, #logo, #face a').leavePage();
 
         // Toggle Navigation for mobile devices
-        // $('.icon-nav').on('click', function(){
-        //     $('header nav').slideToggle();
-        //     $(this).toggleClass('active');
-        // });
+        $('.icon-nav').on('click', function(){
+            $('header nav').slideToggle();
+            $(this).toggleClass('active');
+        });
 
         // // Function to fade in image sprites
         // $('.sprite').fadeSprite();
