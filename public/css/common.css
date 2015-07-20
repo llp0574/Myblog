@@ -1443,6 +1443,13 @@ button:active,
 }
 /*媒体查询*/
 @media ( min-width: 320px ) and ( max-width: 1024px ) { /* 移动设备 */
+    div,a,img {
+        /*去掉点击阴影*/
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select:none;
+    }
     header {
         background: #111111 url(../img/sprite-mobile.png) repeat-x;
         height: 62px;
