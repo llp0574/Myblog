@@ -345,7 +345,7 @@ function ieMessage() {
     var page  = "<div id='ie' class='clearfix'>";
     page     += "<section class='main nopad-b'>";
     page     += "<div class='row'>";
-    page     += "<div class='col-5'>";
+    page     += "<div class='col-5 text-main'>";
     page     += "<h1>Ummm ...</h1>";
     page     += "<p class='intro'>Well this is awkward. It looks like you're using an old browser.</p>";
     page     += "<p>Old browsers including Internet Explorer 6, 7 and 8 can't handle some of the new stuff I've packed into this website. If you'd like to see the full website you'll need to download one of the nice new browsers below. It will also make your life much easier when browsing the net later on.</p>";
@@ -354,12 +354,6 @@ function ieMessage() {
     page     += "<a href='http://www.mozilla.org/en-US/firefox/new/' target='_blank' class='icon-browser firefox'></a>";
     page     += "<a href='http://www.apple.com/au/safari/'' target='_blank' class='icon-browser safari'></a>";
     page     += "</p>";
-    page     += "</div>";
-    page     += "<div class='col-7 last'>";
-    page     += "<img class='major' src='http://v2.adhamdannaway.com/wp-content/themes/ad/images/about-adham-dannaway.jpg' alt='adham dannaway ui designer'>";
-    page     += "</div>";
-    page     += "</div>";
-    page     += "</section>";
     page     += "</div>";
 
     // Print the page
