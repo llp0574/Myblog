@@ -1478,7 +1478,7 @@ button:active,
         display: none;
         background: #222;
         position: fixed;
-        top: 62px;
+        top: 61px;
         right: 0;
         z-index: 1000;
         width: 100%;
@@ -1577,8 +1577,78 @@ button:active,
     }
     .text-main {
         float: none;
-        width: auto;
-        padding: 3em 1.5em;
+        width: 80%;
+        padding: 2em 1em;
+        margin: 0 auto;
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+    h1, .h1 {
+        font-size: 30px;
+        font-size: 3rem;
+    }
+    p.intro {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+    .col-7 {
+        float: none;
+        margin: 0 auto 3em;
+    }
+    .about .col-7 {
+        margin: 0 auto;
+    }
+    .pie-chart .virgo, .pie-chart .coder {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 0 2em;
+    }
+    .ten-things {
+        float: none;
+        text-align: center;
+        padding: 0 0 2em;
+        margin: 0 auto;
+        width: 80%;
+    }
+    #bar-chart {
+        display: none;
+    }
+    #book-rec {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0 2em;
+    }
+    .travel section {
+        padding: 1em 0 3em;
+    }
+    .travel .baguetteBoxOne {
+        text-align: center;
+    }
+    .travel section a {
+        margin: 1em auto;
+    }
+    .blog {
+        padding: 1em;
+    }
+    .blog .col-8 {
+        width: 80%;
+    }
+    .blog-index article {
+        padding-bottom: 2em;
+    }
+    .blog h1, .blog .h1 {
+        font-size: 20px;
+        font-size: 2rem;
+    }
+    .blog .attachment-post-thumbnail {
+        display: block;
+        margin: 2em auto;
+    }
+    .blog article p.author, .blog article p, a.button, button, .submit {
+        font-size: 14px;
+        font-size: 1.4rem;
     }
 }
 @media ( min-width: 320px ) and ( max-width: 667px ) {
@@ -1591,6 +1661,11 @@ button:active,
         margin-right: 0;
     }
     .thumbs li:nth-child(3n){
+        display: none;
+    }
+}
+@media ( min-width: 667px ) and ( max-width: 1136px ) {
+    #snaps {
         display: none;
     }
 }
