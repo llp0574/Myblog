@@ -243,7 +243,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 header {
-    background: #111111 url(../img/sprite.png) repeat-x;
+    background: #030000;
     height: 92px;
     padding: 0 5%;
     width: 90%;
@@ -302,7 +302,7 @@ header nav .portfolio .page-item-7 a {
     float: left;
     height: 92px;
     width: 62px;
-    background: url(../img/sprite.png) 0px -93px no-repeat;
+    background: url(../img/logo.png) center no-repeat;
 }
 .logo:hover {
     opacity: 0.5;
@@ -1451,7 +1451,7 @@ button:active,
         user-select:none;
     }
     header {
-        background: #111111 url(../img/sprite-mobile.png) repeat-x;
+        background: #030000;
         height: 62px;
         padding: 0 5%;
         width: 90%;
