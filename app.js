@@ -26,10 +26,30 @@ var hbs = require('hbs');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-hbs.registerPartials(__dirname + '/views/partials');
+// 注册hbs partials and helper
+var blocks = {};
+
+hbs.registerPartials(__dirname + '/templates/partials');
+
+hbs.registerHelper('extend', function(name, context) {
+    var block = blocks[name];
+    if (!block) {
+        block = blocks[name] = [];
+    }
+
+    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+});
+
+hbs.registerHelper('block', function(name) {
+    var val = (blocks[name] || []).join('\n');
+
+    // clear the block
+    blocks[name] = [];
+    return val;
+});
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'html');
 
 // 使用flash
@@ -38,8 +58,8 @@ app.use(flash());
 // 运行hbs模块
 app.engine('html', hbs.__express);
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// uncomment after placing your favicon in /public/img
+app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(logger({stream: accessLog}));
 app.use(bodyParser.json());
@@ -49,28 +69,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 记录错误日志
 app.use(function (err, req, res, next) {
-  var meta = '[' + new Date() + '] ' + req.url + '\n';
-  errorLog.write(meta + err.stack + '\n');
-  next();
+    var meta = '[' + new Date() + '] ' + req.url + '\n';
+    errorLog.write(meta + err.stack + '\n');
+    next();
 });
 
 app.use('/users', users);
 
 app.use(session({
-  secret: settings.cookieSecret,
-  cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 30
-  },//30 days
-  url: settings.url
+    secret: settings.cookieSecret,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 30
+    },//30 days
+    url: settings.url
 }));
 
 app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Page Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Page Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -78,29 +98,29 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    err.status === undefined ? err.status = 500 : err.status = 404;
-    res.render('error', {
-      title: err.message,
-      error: err,
-      page: 'error'
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        err.status === undefined ? err.status = 500 : err.status = 404;
+        res.render('error', {
+            title: err.message,
+            error: err,
+            page: 'error'
+        });
+        console.log(err);
     });
-    console.log(err);
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  err.status === undefined ? err.status = 500 : err.status = 404;
-  res.render('error', {
-    title: err.message,
-    error: err,
-    page: 'error'
-  });
-  console.log(err);
+    res.status(err.status || 500);
+    err.status === undefined ? err.status = 500 : err.status = 404;
+    res.render('error', {
+        title: err.message,
+        error: err,
+        page: 'error'
+    });
+    console.log(err);
 });
 
 module.exports = app;
